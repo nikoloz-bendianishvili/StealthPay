@@ -1,0 +1,15 @@
+# Dummy values for tests only. These are NOT real keys: k = 2, v = 3, K = 2·G.
+stealthpay:
+  chain:
+    rpc-url: http://localhost:8545
+    sender-private-key: "0x01"
+  scanner:
+    viewing-private-key: "0x03"
+    spending-public-key: "0x02c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5"
+    start-block: 90
+    confirmations: 12
+    max-blocks-per-batch: 50
+    # Tests call scan() themselves; keep the scheduler from running it in the background.
+    initial-delay: PT1H
+  sweep:
+    spending-private-key: "0x02"

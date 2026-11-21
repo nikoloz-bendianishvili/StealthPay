@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: stealthpay
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/stealthpay}
+    username: ${SPRING_DATASOURCE_USERNAME:stealthpay}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+stealthpay:
+  chain:
+    rpc-url: ${SEPOLIA_RPC_URL}
+    sender-private-key: ${STEALTHPAY_SENDER_PRIVATE_KEY}
+  scanner:
+    viewing-private-key: ${STEALTHPAY_VIEWING_PRIVATE_KEY}
+    spending-public-key: ${STEALTHPAY_SPENDING_PUBLIC_KEY}
+    start-block: ${STEALTHPAY_SCAN_START_BLOCK}
+    confirmations: ${STEALTHPAY_CONFIRMATIONS:12}
+    max-blocks-per-batch: ${STEALTHPAY_MAX_BLOCKS_PER_BATCH:500}
+    poll-interval: PT15S
+  sweep:
+    spending-private-key: ${STEALTHPAY_SPENDING_PRIVATE_KEY:}
